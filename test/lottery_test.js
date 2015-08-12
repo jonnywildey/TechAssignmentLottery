@@ -73,6 +73,16 @@
       }, 'participant Adam not ready');
   });
   
+  test('adam picks non unique numbers', function() {
+      var adam = new Participant('Adam', true);
+      adam.lotterySet.addRange([1, 2, 3, 3, 4]);
+      var me = this;
+      throws(function() {
+        me.manager.addParticipant(adam);
+        me.manager.performLottery();
+      }, 'participant Adam not ready');
+  });
+  
   test('adam has no name', function() {
       var adam = new Participant(null, true);
       adam.lotterySet.addRange([1, 2, 30, 40, 50]);
