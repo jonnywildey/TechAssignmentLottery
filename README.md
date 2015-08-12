@@ -1,23 +1,11 @@
 # Lottery
 
-The best jQuery plugin ever.
+Basic Lottery
 
 ## Getting Started
-Download the [production version][min] or the [development version][max].
+Either run grunt or open test/lottery.html in your browser
 
-[min]: https://raw.github.com/Jonny/lottery/master/dist/lottery.min.js
-[max]: https://raw.github.com/Jonny/lottery/master/dist/lottery.js
 
-In your web page:
-
-```html
-<script src="jquery.js"></script>
-<script src="dist/lottery.min.js"></script>
-<script>
-jQuery(function($) {
-  $.awesome(); // "awesome"
-});
-</script>
 ```
 
 ## Documentation
