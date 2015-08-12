@@ -1,0 +1,26 @@
+{
+  "name": "lottery",
+  "title": "Lottery",
+  "description": "The best jQuery plugin ever.",
+  "version": "0.1.0",
+  "homepage": "https://github.com/Jonny/lottery",
+  "author": {
+    "name": "Jonny Wildey",
+    "email": "jonnywildey@gmail.com"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git://github.com/Jonny/lottery.git"
+  },
+  "bugs": "https://github.com/Jonny/lottery/issues",
+  "licenses": [
+    {
+      "type": "MIT",
+      "url": "https://github.com/Jonny/lottery/blob/master/LICENSE-MIT"
+    }
+  ],
+  "dependencies": {
+    "jquery": "*"
+  },
+  "keywords": []
+}
