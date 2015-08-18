@@ -4,6 +4,7 @@
 function LotterySet() {
 
 	this.selectedNumbers = [];
+	this.bitSum = 0;
 }
 /**
  * lowest lottery value
@@ -21,6 +22,11 @@ LotterySet.prototype.setCount = 5;
  * selected numbers
  */
 LotterySet.prototype.selectedNumbers = null;
+
+/**
+ * number representing unique set of numbers
+ */
+LotterySet.prototype.bitSum = null;
 
 
 /**
@@ -43,6 +49,8 @@ LotterySet.prototype.addNumber = function(value) {
 	});
 	if (valid) {
 		this.selectedNumbers.push(value);
+		//add value to id
+		this.bitSum += (Math.pow(2, value));
 	}
 	return valid
 };
@@ -98,13 +106,7 @@ LotterySet.prototype.generateSet = function() {
  * Does selected numbers contain value
  */
 LotterySet.prototype.contains = function(val) {
-	var contains = false;
-	this.selectedNumbers.forEach(function(num) {
-		if (val === num) {
-			contains = true;
-		}
-	});
-	return contains;
+	return (Math.pow(2, val) & this.bitSum) !== 0;
 };
 
 /**
@@ -115,14 +117,8 @@ LotterySet.prototype.equalSet = function(lotterySet) {
 	if (!this.pickedAllNumbers() || !lotterySet.pickedAllNumbers()) {
 		return false;
 	}
-	var equal = true;
-	//check our numbers to theirs
-	this.selectedNumbers.forEach(function(val) {
-		if (!lotterySet.contains(val)) {
-			equal = false;
-		}
-	});
-	return equal;
+	//equal sets have equal sums
+	return (lotterySet.bitSum === this.bitSum);
 };
 
 

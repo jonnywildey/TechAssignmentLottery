@@ -92,6 +92,16 @@
         me.manager.performLottery();
       }, 'participant Adam not ready');
   });
+  
+  test('contains', function() {
+      var adam = new Participant(null, true);
+      adam.lotterySet.addRange([1, 2, 3, 4, 5]);
+      var con = adam.lotterySet.contains(1);
+      console.log(con);
+      equal(con, true);
+      con = adam.lotterySet.contains(20);
+      equal(con, false);
+  });
 
 
 }(jQuery));
